@@ -2,11 +2,10 @@ lockfileVersion: 5.3
 
 specifiers:
   '@nestjs/cli': ^7.6.0
-  '@nestjs/common': ^7.6.18
-  '@nestjs/core': ^7.6.18
   '@nestjs/platform-express': ^7.6.15
   '@nestjs/schematics': ^7.3.0
   '@nestjs/testing': ^7.6.15
+  '@rush-temp/admin-app': file:./projects/admin-app.tgz
   '@rush-temp/client-app': file:./projects/client-app.tgz
   '@types/express': ^4.17.11
   '@types/jest': ^26.0.22
@@ -21,7 +20,6 @@ specifiers:
   prettier: ^2.2.1
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
-  rxjs: ^7.1.0
   supertest: ^6.1.3
   ts-jest: ^26.5.4
   ts-loader: ^8.0.18
@@ -31,11 +29,10 @@ specifiers:
 
 dependencies:
   '@nestjs/cli': 7.6.0
-  '@nestjs/common': 7.6.18_bc66c5be445bd14e254ef544a46fff64
-  '@nestjs/core': 7.6.18_617e7b2b19ff40d42285c1bd8420e35f
-  '@nestjs/platform-express': 7.6.18_2664420588e0901c7943acb4693cbaf4
+  '@nestjs/platform-express': 7.6.18
   '@nestjs/schematics': 7.3.1_typescript@4.3.5
-  '@nestjs/testing': 7.6.18_9cd0f963ae6f35bf288217e4f1c45cb4
+  '@nestjs/testing': 7.6.18_@nestjs+platform-express@7.6.18
+  '@rush-temp/admin-app': file:projects/admin-app.tgz
   '@rush-temp/client-app': file:projects/client-app.tgz
   '@types/express': 4.17.12
   '@types/jest': 26.0.23
@@ -50,7 +47,6 @@ dependencies:
   prettier: 2.3.2
   reflect-metadata: 0.1.13
   rimraf: 3.0.2
-  rxjs: 7.1.0
   supertest: 6.1.3
   ts-jest: 26.5.6_jest@26.6.3+typescript@4.3.5
   ts-loader: 8.3.0_typescript@4.3.5
@@ -710,6 +706,32 @@ packages:
       - webpack-cli
     dev: false
 
+  /@nestjs/common/7.6.18_8e6d4b7501d9d25f42cbf34563d4f5bc:
+    resolution: {integrity: sha512-BUJQHNhWzwWOkS4Ryndzd4HTeRObcAWV2Fh+ermyo3q3xYQQzNoEWclJVL/wZec8AONELwIJ+PSpWI53VP0leg==}
+    peerDependencies:
+      cache-manager: '*'
+      class-transformer: '*'
+      class-validator: '*'
+      reflect-metadata: ^0.1.12
+      rxjs: ^6.0.0
+    peerDependenciesMeta:
+      cache-manager:
+        optional: true
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
+      axios: 0.21.1
+      iterare: 1.2.1
+      reflect-metadata: 0.1.13
+      rxjs: 6.6.7
+      tslib: 2.2.0
+      uuid: 8.3.2
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /@nestjs/common/7.6.18_bc66c5be445bd14e254ef544a46fff64:
     resolution: {integrity: sha512-BUJQHNhWzwWOkS4Ryndzd4HTeRObcAWV2Fh+ermyo3q3xYQQzNoEWclJVL/wZec8AONELwIJ+PSpWI53VP0leg==}
     peerDependencies:
@@ -767,14 +789,58 @@ packages:
       uuid: 8.3.2
     dev: false
 
+  /@nestjs/core/7.6.18_cf22c14faf7a8288645a80ae61717d6f:
+    resolution: {integrity: sha512-CGu20OjIxgFDY7RJT5t1TDGL8wSlTSlbZEkn8U5OlICZEB3WIpi98G7ajJpnRWmEgW8S4aDJmRKGjT+Ntj5U4A==}
+    requiresBuild: true
+    peerDependencies:
+      '@nestjs/common': ^7.0.0
+      '@nestjs/microservices': ^7.0.0
+      '@nestjs/platform-express': ^7.0.0
+      '@nestjs/websockets': ^7.0.0
+      reflect-metadata: ^0.1.12
+      rxjs: ^6.0.0
+    peerDependenciesMeta:
+      '@nestjs/microservices':
+        optional: true
+      '@nestjs/platform-express':
+        optional: true
+      '@nestjs/websockets':
+        optional: true
+    dependencies:
+      '@nestjs/common': 7.6.18_8e6d4b7501d9d25f42cbf34563d4f5bc
+      '@nestjs/platform-express': 7.6.18_2664420588e0901c7943acb4693cbaf4
+      '@nuxtjs/opencollective': 0.3.2
+      fast-safe-stringify: 2.0.7
+      iterare: 1.2.1
+      object-hash: 2.1.1
+      path-to-regexp: 3.2.0
+      reflect-metadata: 0.1.13
+      rxjs: 6.6.7
+      tslib: 2.2.0
+      uuid: 8.3.2
+    dev: false
+
+  /@nestjs/platform-express/7.6.18:
+    resolution: {integrity: sha512-Dty2bBhsW7EInMRPS1pkXKJ3GBBusEj6fnEpb0UfkaT3E7asay9c64kCmZE+8hU430qQjY+fhBb1RNWWPnUiwQ==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0
+      '@nestjs/core': ^7.0.0
+    dependencies:
+      body-parser: 1.19.0
+      cors: 2.8.5
+      express: 4.17.1
+      multer: 1.4.2
+      tslib: 2.2.0
+    dev: false
+
   /@nestjs/platform-express/7.6.18_2664420588e0901c7943acb4693cbaf4:
     resolution: {integrity: sha512-Dty2bBhsW7EInMRPS1pkXKJ3GBBusEj6fnEpb0UfkaT3E7asay9c64kCmZE+8hU430qQjY+fhBb1RNWWPnUiwQ==}
     peerDependencies:
       '@nestjs/common': ^7.0.0
       '@nestjs/core': ^7.0.0
     dependencies:
-      '@nestjs/common': 7.6.18_bc66c5be445bd14e254ef544a46fff64
-      '@nestjs/core': 7.6.18_617e7b2b19ff40d42285c1bd8420e35f
+      '@nestjs/common': 7.6.18_8e6d4b7501d9d25f42cbf34563d4f5bc
+      '@nestjs/core': 7.6.18_cf22c14faf7a8288645a80ae61717d6f
       body-parser: 1.19.0
       cors: 2.8.5
       express: 4.17.1
@@ -822,9 +888,27 @@ packages:
         optional: true
     dependencies:
       optional: 0.1.4
-      '@nestjs/common': 7.6.18_bc66c5be445bd14e254ef544a46fff64
-      '@nestjs/core': 7.6.18_617e7b2b19ff40d42285c1bd8420e35f
+      '@nestjs/common': 7.6.18_8e6d4b7501d9d25f42cbf34563d4f5bc
+      '@nestjs/core': 7.6.18_cf22c14faf7a8288645a80ae61717d6f
       '@nestjs/platform-express': 7.6.18_2664420588e0901c7943acb4693cbaf4
+      tslib: 2.2.0
+    dev: false
+
+  /@nestjs/testing/7.6.18_@nestjs+platform-express@7.6.18:
+    resolution: {integrity: sha512-1AVk9vWZlPpx4CmzY6z9z0DHFgGCadfr01QdisGFAN740JwKqZWEqz12cVd+nsXDlYQPFRkp2ICBIS/6k1qZGQ==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0
+      '@nestjs/core': ^7.0.0
+      '@nestjs/microservices': ^7.0.0
+      '@nestjs/platform-express': ^7.0.0
+    peerDependenciesMeta:
+      '@nestjs/microservices':
+        optional: true
+      '@nestjs/platform-express':
+        optional: true
+    dependencies:
+      optional: 0.1.4
+      '@nestjs/platform-express': 7.6.18
       tslib: 2.2.0
     dev: false
 
@@ -4869,6 +4953,13 @@ packages:
       tslib: 1.14.1
     dev: false
 
+  /rxjs/6.6.7:
+    resolution: {integrity: sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ==}
+    engines: {npm: '>=2.0.0'}
+    dependencies:
+      tslib: 1.14.1
+    dev: false
+
   /rxjs/7.1.0:
     resolution: {integrity: sha512-gCFO5iHIbRPwznl6hAYuwNFld8W4S2shtSJIqG27ReWXo9IWrCyEICxUA+6vJHwSR/OakoenC4QsDxq50tzYmw==}
     dependencies:
@@ -5992,6 +6083,52 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  file:projects/admin-app.tgz:
+    resolution: {integrity: sha512-uie3jTTTkXitw2m/1kOESJx3GySjzworLG3pYcvo3g1AH8yGzqtc77utHU4husIR2nXdFrxSzL27Amk7gxXn/g==, tarball: file:projects/admin-app.tgz}
+    name: '@rush-temp/admin-app'
+    version: 0.0.0
+    dependencies:
+      '@nestjs/cli': 7.6.0
+      '@nestjs/common': 7.6.18_8e6d4b7501d9d25f42cbf34563d4f5bc
+      '@nestjs/core': 7.6.18_cf22c14faf7a8288645a80ae61717d6f
+      '@nestjs/platform-express': 7.6.18_2664420588e0901c7943acb4693cbaf4
+      '@nestjs/schematics': 7.3.1_typescript@4.3.5
+      '@nestjs/testing': 7.6.18_9cd0f963ae6f35bf288217e4f1c45cb4
+      '@types/express': 4.17.12
+      '@types/jest': 26.0.23
+      '@types/node': 14.17.4
+      '@types/supertest': 2.0.11
+      '@typescript-eslint/eslint-plugin': 4.28.1_3b707c2a5a0917891f3a39746f7412f0
+      '@typescript-eslint/parser': 4.28.1_eslint@7.29.0+typescript@4.3.5
+      eslint: 7.29.0
+      eslint-config-prettier: 8.3.0_eslint@7.29.0
+      eslint-plugin-prettier: 3.4.0_4e72879372edbffcbdaf0fa17b22c203
+      jest: 26.6.3_ts-node@9.1.1
+      prettier: 2.3.2
+      reflect-metadata: 0.1.13
+      rimraf: 3.0.2
+      rxjs: 6.6.7
+      supertest: 6.1.3
+      ts-jest: 26.5.6_jest@26.6.3+typescript@4.3.5
+      ts-loader: 8.3.0_typescript@4.3.5
+      ts-node: 9.1.1_typescript@4.3.5
+      tsconfig-paths: 3.9.0
+      typescript: 4.3.5
+    transitivePeerDependencies:
+      - '@nestjs/microservices'
+      - '@nestjs/websockets'
+      - bufferutil
+      - cache-manager
+      - canvas
+      - class-transformer
+      - class-validator
+      - debug
+      - supports-color
+      - utf-8-validate
+      - webpack
+      - webpack-cli
     dev: false
 
   file:projects/client-app.tgz:

@@ -392,6 +392,10 @@
     {
       "packageName": "client-app",
       "projectFolder": "../apps/client"
+    },
+    {
+      "packageName": "admin-app",
+      "projectFolder": "../apps/admin"
     }
     // {
     //   /**
