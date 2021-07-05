@@ -396,6 +396,10 @@
     {
       "packageName": "admin-app",
       "projectFolder": "../apps/admin"
+    },
+    {
+      "packageName": "auth-tools",
+      "projectFolder": "../tools/auth"
     }
     // {
     //   /**
